@@ -8,8 +8,6 @@ solution_url = "https://cc.the-morpheus.de/solutions/1/"
 resp = requests.get(chall_url)
 
 
-
-
 data = {"token": resp.text}
 
 
