@@ -28,9 +28,9 @@ search k in list
 """
 index = 0
 for i, item in enumerate(list):
-   if int(item) == int(k):
-      index = i
-      break
+    if int(item) == int(k):
+        index = i
+        break
 
 
 """
