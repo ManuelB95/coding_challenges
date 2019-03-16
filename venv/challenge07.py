@@ -1,6 +1,5 @@
 import requests
 import json
-import ast
 
 chall_url = "https://cc.the-morpheus.de/challenges/7/"
 solution_url = "https://cc.the-morpheus.de/solutions/7/"
@@ -10,16 +9,14 @@ task = json.loads(resp)
 k = task['k']
 liste = task['list']
 
-solution = []
-
-for elem in enumerate(liste):
-    for i in range(elem[0] + 1, len(liste)):
-        if elem[1] + liste[i] == k:
-            solution = [elem[0], i]
-            break
-    if len(solution) > 0:
-        break
-
+def searchIndexes(liste, k):
+    hashMap = dict()
+    for i in range(len(liste)):
+        complement = k - liste[i]
+        if complement in hashMap:
+            return [hashMap[complement], i]
+        hashMap[liste[i]] = i
+    
 
 def sendResult(result):
     data = {"token": result}
@@ -27,9 +24,4 @@ def sendResult(result):
     print(result.text)
 
 
-print(solution)
-sendResult(solution)
-
-
-
-
+sendResult(searchIndexes(liste, k))
