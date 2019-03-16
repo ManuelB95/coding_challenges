@@ -5,6 +5,8 @@ chall_url = "https://cc.the-morpheus.de/challenges/5/"
 solution_url = "https://cc.the-morpheus.de/solutions/5/"
 
 inputStr = requests.get(chall_url).text
+
+
 inputList = inputStr.split(' ')
 length = len(inputList)
 

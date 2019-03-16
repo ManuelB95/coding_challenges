@@ -10,6 +10,7 @@ get the whole input as text
 inputStr = requests.get(chall_url).text
 
 
+
 """
 get the k elem
 """
