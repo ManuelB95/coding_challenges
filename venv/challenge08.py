@@ -10,20 +10,19 @@ task = json.loads(resp)
 k = task['k']
 liste = task['list']
 
+for a in range(len(liste)):
+    for b in range(len(liste)):
+        if liste[a] == liste[b]:
+            print("found two equal elements")
 
                     
 def searchIdexes(liste, k):
-    leange = len(liste)
-    for a in range(leange):
-        for b in range(a, leange):
-            for c in range(b, leange):
-                for d in range(c, leange):
+    for a in range(len(liste)):
+        for b in range(a, len(liste)):
+            for c in range(b, len(liste)):
+                for d in range(c, len(liste)):
                     if liste[a] + liste[b] + liste[c] + liste[d] == int(k):
-                        print("hi")
                         return [a, b, c, d]
-
-
-#print(searchIdexes(liste, k))
 
 
 def sendResult(result):
